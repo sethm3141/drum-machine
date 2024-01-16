@@ -1,0 +1,20 @@
+@use '../global' as *;
+@use '../custom' as *;
+
+.drum-pad {
+  font-size: 3rem;
+  font-family: 'Lilita One', sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: rem(2) solid hsla(0, 0%, 0%, 0.15);
+  border-radius: rem(10);
+  background-color: white;
+  filter: drop-shadow(rem(5) rem(5) rem(10) hsla(0, 0%, 0%, 0.4));
+
+  &:hover {
+    background-color: $secondary;
+    cursor: pointer;
+  }
+}

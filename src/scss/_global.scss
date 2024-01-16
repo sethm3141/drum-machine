@@ -1,0 +1,14 @@
+@use 'sass:math';
+
+// functions
+@function rem($pixels, $context: 16) {
+  @return (math.div($pixels, $context) * 1rem);
+}
+
+// global variables
+$height: rem(500);
+$width: rem(500);
+
+* {
+  // border: 1px solid red;
+}

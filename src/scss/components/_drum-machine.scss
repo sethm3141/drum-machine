@@ -1,0 +1,9 @@
+@use '../global' as *;
+@use '../custom' as *;
+
+#drum-machine {
+  height: $height;
+  margin-top: calc(50vh - $height / 2);
+  border: rem(14) solid $secondary;
+  border-radius: rem(35);
+}
