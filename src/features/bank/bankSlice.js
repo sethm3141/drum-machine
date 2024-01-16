@@ -1,13 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  value: 0,
+  isOn: false,
 };
 
 const bankSlice = createSlice({
   name: 'bank',
   initialState,
-  reducers: {},
+  reducers: {
+    turnOnBank: (state) => {
+      state.isOn = true;
+    },
+    turnOffBank: (state) => {
+      state.isOn = false;
+    },
+  },
 });
 
 export const {} = bankSlice.actions;

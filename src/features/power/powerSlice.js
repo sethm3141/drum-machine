@@ -1,13 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  value: 0,
+  isOn: true,
 };
 
 const powerSlice = createSlice({
   name: 'power',
   initialState,
-  reducers: {},
+  reducers: {
+    turnOnPower: (state) => {
+      state.isOn = true;
+    },
+    turnOffPower: (state) => {
+      state.isOn = false;
+    },
+  },
 });
 
 export const {} = powerSlice.actions;

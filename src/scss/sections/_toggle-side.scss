@@ -1,4 +1,38 @@
+@use '../custom' as *;
 @use '../global' as *;
 
 .toggle-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Salsa', cursive;
+
+  & .toggle-switch {
+    font-size: 2rem;
+    text-align: center;
+    padding: rem(0) !important;
+
+    & input {
+      width: 6rem;
+      height: 50%;
+      margin-left: 0;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      border: rem(3) solid $secondary;
+    }
+  }
+
+  & #display {
+    display: flex;
+    width: rem(250);
+    height: rem(75);
+    font-size: 2rem;
+
+    justify-content: center;
+    align-items: center;
+    background-color: $third;
+    border-radius: rem(12);
+    border: rem(5) solid $secondary;
+  }
 }
