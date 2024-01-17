@@ -1,5 +1,6 @@
 import './assets/css/index.css';
 import Keypad from './components/Keypad';
+import ToggleSide from './components/ToggleSide';
 
 function App() {
   return (
@@ -10,27 +11,7 @@ function App() {
       </section>
       <section className='body container row'>
         <Keypad />
-        <section className='toggle-side container col-6'>
-          <div class='toggle-switch form-check form-switch d-flex flex-column'>
-            <label class='form-check-label' for='powerCheckbox'>
-              Power
-            </label>
-            <input
-              class='form-check-input'
-              type='checkbox'
-              id='powerCheckbox'
-              checked
-            />
-          </div>
-          <div id='display'>Kick</div>
-          <div className='slider'>Slider</div>
-          <div class='toggle-switch form-check form-switch d-flex flex-column'>
-            <label class='form-check-label' for='bankCheckbox'>
-              Bank
-            </label>
-            <input class='form-check-input' type='checkbox' id='bankCheckbox' />
-          </div>
-        </section>
+        <ToggleSide />
       </section>
     </div>
   );

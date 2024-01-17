@@ -12,6 +12,7 @@
     font-size: 2rem;
     text-align: center;
     padding: rem(0) !important;
+    margin-top: rem(-30);
 
     & input {
       width: 6rem;
@@ -34,5 +35,9 @@
     background-color: $third;
     border-radius: rem(12);
     border: rem(5) solid $secondary;
+  }
+
+  & .slider {
+    width: rem(220);
   }
 }

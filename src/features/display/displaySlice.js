@@ -1,13 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  value: 0,
+  text: '',
 };
 
 const displaySlice = createSlice({
   name: 'display',
   initialState,
-  reducers: {},
+  reducers: {
+    setText: (state, action) => {
+      const newText = action.payload;
+      state.text = newText;
+    },
+    emptyText: (state) => {
+      state.text = '';
+    },
+  },
 });
 
 export const {} = displaySlice.actions;

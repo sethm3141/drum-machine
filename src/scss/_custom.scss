@@ -4,5 +4,25 @@ $primary: hsl(209, 61%, 62%);
 $secondary: hsl(209, 40%, 70%);
 $third: hsl(209, 40%, 80%);
 
+// Active background color
+$component-active-bg: $secondary;
+
+// focus outline that shows around stuff when active
+$focus-ring-width: 0rem;
+
+// the tint color that the focus outline would use
+$input-focus-border-color: tint-color($component-active-bg, 0%);
+
+// custom range input for the volume
+$form-range-thumb-width: 1.5rem;
+$form-range-thumb-border: 0;
+$form-range-thumb-border-radius: 0.25rem;
+$form-range-track-bg: $third;
+
+// button opacity when clicked
+$form-range-thumb-active-bg: tint-color($component-active-bg, 70%);
+// $form-range-thumb-transition: background-color 0.15s ease-in-out,
+//   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
 // import bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
