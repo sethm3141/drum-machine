@@ -1,18 +1,13 @@
 const PowerSwitch = () => {
   return (
     <div
-      class='toggle-switch form-check form-switch d-flex flex-column'
+      className='toggle-switch form-check form-switch d-flex flex-column'
       id='power-switch'
     >
-      <label class='form-check-label' for='powerCheckbox'>
+      <label className='form-check-label' htmlFor='powerCheckbox'>
         Power
       </label>
-      <input
-        class='form-check-input'
-        type='checkbox'
-        id='powerCheckbox'
-        checked
-      />
+      <input className='form-check-input' type='checkbox' id='powerCheckbox' />
     </div>
   );
 };

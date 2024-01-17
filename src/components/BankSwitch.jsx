@@ -1,12 +1,15 @@
 const BankSwitch = () => {
   return (
-    <div class='toggle-switch form-check form-switch d-flex flex-column' id="bank-switch">
-      <label class='form-check-label' for='bankCheckbox'>
+    <div
+      className='toggle-switch form-check form-switch d-flex flex-column'
+      id='bank-switch'
+    >
+      <label className='form-check-label' htmlFor='bankCheckbox'>
         Bank
       </label>
-      <input class='form-check-input' type='checkbox' id='bankCheckbox' />
+      <input className='form-check-input' type='checkbox' id='bankCheckbox' />
     </div>
   );
-}
+};
 
-export default BankSwitch
+export default BankSwitch;
