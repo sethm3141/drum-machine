@@ -18,6 +18,6 @@ const displaySlice = createSlice({
   },
 });
 
-export const {} = displaySlice.actions;
+export const { setText, emptyText } = displaySlice.actions;
 
 export default displaySlice.reducer;

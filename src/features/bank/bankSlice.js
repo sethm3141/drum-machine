@@ -17,6 +17,6 @@ const bankSlice = createSlice({
   },
 });
 
-export const {} = bankSlice.actions;
+export const { turnOnBank, turnOffBank } = bankSlice.actions;
 
 export default bankSlice.reducer;

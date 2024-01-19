@@ -17,6 +17,6 @@ const powerSlice = createSlice({
   },
 });
 
-export const {} = powerSlice.actions;
+export const { turnOnPower, turnOffPower } = powerSlice.actions;
 
 export default powerSlice.reducer;

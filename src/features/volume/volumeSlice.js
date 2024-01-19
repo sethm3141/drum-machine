@@ -15,6 +15,6 @@ const volumeSlice = createSlice({
   },
 });
 
-export const {} = volumeSlice.actions;
+export const { setVolume } = volumeSlice.actions;
 
 export default volumeSlice.reducer;
