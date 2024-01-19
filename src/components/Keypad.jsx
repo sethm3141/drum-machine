@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 import Button from './Button';
 import { useSelector } from 'react-redux';
+import PlaySound from '../functions/PlaySound';
 
 const Keypad = () => {
-  const { audio, activeKey } = useSelector((store) => store.drumPad);
+  const { audio, activeKey, timeStamp } = useSelector((store) => store.drumPad);
   const isMounted = useRef(false);
 
   useEffect(() => {
@@ -11,9 +12,16 @@ const Keypad = () => {
       isMounted.current = true;
       return;
     }
-    const clickedButton = document.getElementById(activeKey);
-    console.log(clickedButton);
-  }, [activeKey]);
+
+    //* Grab the DOM that involves the <audio> and <button>
+    const clickedButton = document.getElementById(
+      audio.find((audioElement) => audioElement.key === activeKey).id
+    );
+    const playedAudio = document.getElementById(activeKey);
+
+    // //* 'activate' the DOM pieces that we grabbed above
+    PlaySound(activeKey, playedAudio.id);
+  }, [activeKey, timeStamp]);
 
   return (
     <section className='keypad container col-6'>

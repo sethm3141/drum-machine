@@ -4,6 +4,9 @@ import { AUDIO_DRUMS, AUDIO_PIANO } from '../../data';
 const initialState = {
   audio: AUDIO_DRUMS,
   activeKey: '',
+  timeStamp: null,
+  activation: false,
+  activationClassName: 'active-btn',
 };
 
 const drumPadSlice = createSlice({
@@ -20,9 +23,27 @@ const drumPadSlice = createSlice({
     resetActiveKey: (state) => {
       state.activeKey = '';
     },
+    setTimeStamp: (state) => {
+      state.timeStamp = performance.now();
+    },
+    setActivation: (state, action) => {
+      state.activation = !state.activation;
+      const audioButton = document.getElementById(action.payload);
+      if (state.activation) {
+        audioButton.classList.add(state.activationClassName);
+      } else {
+        audioButton.classList.remove(state.activationClassName);
+      }
+    },
   },
 });
 
-export const { setAudio, setActiveKey, resetActiveKey } = drumPadSlice.actions;
+export const {
+  setAudio,
+  setActiveKey,
+  resetActiveKey,
+  setTimeStamp,
+  setActivation,
+} = drumPadSlice.actions;
 
 export default drumPadSlice.reducer;

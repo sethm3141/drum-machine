@@ -1,3 +1,5 @@
+import PlaySound from '../functions/PlaySound';
+
 const Button = ({ audioID, audioKey, audioURL }) => {
   return (
     <>
@@ -5,9 +7,7 @@ const Button = ({ audioID, audioKey, audioURL }) => {
         className='drum-pad btn col-3'
         id={audioID}
         onClick={() => {
-          const audioClip = document.getElementById(audioKey);
-          audioClip.currentTime = 0;
-          audioClip.play();
+          PlaySound(audioKey, audioID);
         }}
       >
         <audio

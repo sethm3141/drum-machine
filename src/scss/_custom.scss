@@ -24,5 +24,18 @@ $form-range-thumb-active-bg: tint-color($component-active-bg, 70%);
 // $form-range-thumb-transition: background-color 0.15s ease-in-out,
 //   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
+// Create an 'active' style that matches the :hover and the :active
+.active-btn {
+  @extend .btn;
+
+  &:hover {
+    color: red;
+  }
+
+  &:active {
+    color: red;
+  }
+}
+
 // import bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';

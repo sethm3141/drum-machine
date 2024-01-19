@@ -3,7 +3,7 @@ import './assets/css/index.css';
 import Keypad from './components/Keypad';
 import ToggleSide from './components/ToggleSide';
 import { useDispatch } from 'react-redux';
-import { setActiveKey } from './features/drumPad/drumPadSlice';
+import { setActiveKey, setTimeStamp } from './features/drumPad/drumPadSlice';
 import { VALID_KEYS } from './data';
 
 function App() {
@@ -12,12 +12,13 @@ function App() {
   const updateActiveKey = (e) => {
     if (VALID_KEYS.find((element) => element == e.key)) {
       dispatch(setActiveKey(e.key.toUpperCase()));
+      dispatch(setTimeStamp());
     }
   };
 
   useEffect(() => {
     console.log('We added an event listener...');
-    document.addEventListener('keypress', updateActiveKey);
+    document.addEventListener('keydown', updateActiveKey);
   }, []);
 
   return (
