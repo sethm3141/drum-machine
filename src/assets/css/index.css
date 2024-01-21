@@ -11863,7 +11863,8 @@ textarea.form-control-lg {
   font-size: 1.5rem;
   justify-content: end;
   align-items: center;
-  margin-top: 0.25rem;
+  margin-top: 0.45rem;
+  margin-bottom: -1.55rem;
 }
 .header h1 {
   font-family: "Salsa", cursive;
@@ -11871,6 +11872,7 @@ textarea.form-control-lg {
 }
 .header i {
   padding-left: 0.5rem;
+  margin-top: -1.55rem;
   margin-right: 1rem;
   font-weight: bold;
 }

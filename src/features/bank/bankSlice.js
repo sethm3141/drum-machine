@@ -8,15 +8,12 @@ const bankSlice = createSlice({
   name: 'bank',
   initialState,
   reducers: {
-    turnOnBank: (state) => {
-      state.isOn = true;
-    },
-    turnOffBank: (state) => {
-      state.isOn = false;
+    switchBank: (state) => {
+      state.isOn = !state.isOn;
     },
   },
 });
 
-export const { turnOnBank, turnOffBank } = bankSlice.actions;
+export const { switchBank } = bankSlice.actions;
 
 export default bankSlice.reducer;

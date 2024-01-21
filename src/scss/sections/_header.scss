@@ -1,8 +1,10 @@
 .header {
+  $Margin-Fixer: -1.55rem;
   font-size: 1.5rem;
   justify-content: end;
   align-items: center;
-  margin-top: 0.25rem;
+  margin-top: 0.45rem;
+  margin-bottom: $Margin-Fixer;
 
   & h1 {
     @extend .header;
@@ -13,6 +15,7 @@
   & i {
     @extend .header;
     padding-left: 0.5rem;
+    margin-top: $Margin-Fixer;
     margin-right: 1rem;
     font-weight: bold;
   }

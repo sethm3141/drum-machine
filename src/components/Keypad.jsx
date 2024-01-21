@@ -1,60 +1,73 @@
+import { useEffect, useRef } from 'react';
 import Button from './Button';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { switchAudioToPlay } from '../features/drumPad/drumPadSlice';
 
 const Keypad = () => {
-  const { audio } = useSelector((store) => store.drumPad);
+  const dispatch = useDispatch();
+  const { audioToPlay } = useSelector((store) => store.drumPad);
+  const { isOn } = useSelector((store) => store.bank);
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true;
+      return;
+    }
+    dispatch(switchAudioToPlay());
+  }, [isOn]);
 
   return (
     <section className='keypad container col-6'>
       <div className='row justify-content-evenly' style={{ height: '25%' }}>
         <Button
-          audioID={audio[0].id}
-          audioKey={audio[0].key}
-          audioURL={audio[0].url}
+          audioID={audioToPlay[0].id}
+          audioKey={audioToPlay[0].key}
+          audioURL={audioToPlay[0].url}
         />
         <Button
-          audioID={audio[1].id}
-          audioKey={audio[1].key}
-          audioURL={audio[1].url}
+          audioID={audioToPlay[1].id}
+          audioKey={audioToPlay[1].key}
+          audioURL={audioToPlay[1].url}
         />
         <Button
-          audioID={audio[2].id}
-          audioKey={audio[2].key}
-          audioURL={audio[2].url}
-        />
-      </div>
-      <div className='row justify-content-evenly' style={{ height: '25%' }}>
-        <Button
-          audioID={audio[3].id}
-          audioKey={audio[3].key}
-          audioURL={audio[3].url}
-        />
-        <Button
-          audioID={audio[4].id}
-          audioKey={audio[4].key}
-          audioURL={audio[4].url}
-        />
-        <Button
-          audioID={audio[5].id}
-          audioKey={audio[5].key}
-          audioURL={audio[5].url}
+          audioID={audioToPlay[2].id}
+          audioKey={audioToPlay[2].key}
+          audioURL={audioToPlay[2].url}
         />
       </div>
       <div className='row justify-content-evenly' style={{ height: '25%' }}>
         <Button
-          audioID={audio[6].id}
-          audioKey={audio[6].key}
-          audioURL={audio[6].url}
+          audioID={audioToPlay[3].id}
+          audioKey={audioToPlay[3].key}
+          audioURL={audioToPlay[3].url}
         />
         <Button
-          audioID={audio[7].id}
-          audioKey={audio[7].key}
-          audioURL={audio[7].url}
+          audioID={audioToPlay[4].id}
+          audioKey={audioToPlay[4].key}
+          audioURL={audioToPlay[4].url}
         />
         <Button
-          audioID={audio[8].id}
-          audioKey={audio[8].key}
-          audioURL={audio[8].url}
+          audioID={audioToPlay[5].id}
+          audioKey={audioToPlay[5].key}
+          audioURL={audioToPlay[5].url}
+        />
+      </div>
+      <div className='row justify-content-evenly' style={{ height: '25%' }}>
+        <Button
+          audioID={audioToPlay[6].id}
+          audioKey={audioToPlay[6].key}
+          audioURL={audioToPlay[6].url}
+        />
+        <Button
+          audioID={audioToPlay[7].id}
+          audioKey={audioToPlay[7].key}
+          audioURL={audioToPlay[7].url}
+        />
+        <Button
+          audioID={audioToPlay[8].id}
+          audioKey={audioToPlay[8].key}
+          audioURL={audioToPlay[8].url}
         />
       </div>
     </section>

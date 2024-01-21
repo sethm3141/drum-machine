@@ -8,6 +8,8 @@ const Button = ({ audioID, audioKey, audioURL }) => {
   const timeoutRef = useRef(null);
   const [active, setActive] = useState('');
   const { isOn } = useSelector((store) => store.power);
+  const { isDrums } = useSelector((store) => store.drumPad);
+  const { volume: setVolume } = useSelector((store) => store.volume);
 
   const handleButtonPress = (event = audioKey) => {
     if (event?.key?.toUpperCase() === audioKey || event === audioKey) {
@@ -20,7 +22,7 @@ const Button = ({ audioID, audioKey, audioURL }) => {
 
       if (isOn) {
         //* Play the audio
-        PlaySound(audioKey);
+        PlaySound(audioKey, setVolume);
 
         //* update the display
         dispatch(setText(audioID.replace(/-/g, ' ')));
@@ -31,14 +33,14 @@ const Button = ({ audioID, audioKey, audioURL }) => {
   useEffect(() => {
     //* Setup the event listener and handle playing the sound and stuff...
     document.addEventListener('keydown', handleButtonPress);
-    // console.log('Added an event listener.');
+    console.log('Added an event listener.');
 
     //! Handle the cleanup of the setEventListener function.
     return () => {
       document.removeEventListener('keydown', handleButtonPress);
       clearTimeout(timeoutRef.current);
     };
-  }, [isOn]);
+  }, [isOn, isDrums]);
 
   return (
     <>
