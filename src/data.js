@@ -1,7 +1,3 @@
-export const ACTIVE_BUTTON_STYLE = {
-  backgroundColor: 'hsl(209, 61%, 62%)',
-};
-
 export const VALID_KEYS = [
   'q',
   'Q',

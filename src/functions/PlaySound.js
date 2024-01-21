@@ -1,5 +1,3 @@
-import { setActivation } from '../features/drumPad/drumPadSlice';
-
 const PlaySound = (audioKey) => {
   const audioClip = document.getElementById(audioKey);
   audioClip.currentTime = 0;
