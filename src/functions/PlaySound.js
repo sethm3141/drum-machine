@@ -1,16 +1,11 @@
-import { useDispatch } from 'react-redux';
 import { setActivation } from '../features/drumPad/drumPadSlice';
 
-const PlaySound = (audioKey, audioID) => {
-  // const dispatch = useDispatch();
+const PlaySound = (audioKey) => {
   const audioClip = document.getElementById(audioKey);
   audioClip.currentTime = 0;
-  // dispatch(setActivation(audioID));
+  //TODO: set volume from settings...
+  audioClip.volume = 0.2;
   audioClip.play();
-  // setTimeout(() => {
-  //   dispatch(setActivation(audioID));
-  // }, 100);
-  //TODO: update the display here...
 };
 
 export default PlaySound;

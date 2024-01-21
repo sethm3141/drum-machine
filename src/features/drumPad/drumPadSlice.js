@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { AUDIO_DRUMS, AUDIO_PIANO } from '../../data';
+import { AUDIO_DRUMS, AUDIO_PIANO, ACTIVE_BUTTON_STYLE } from '../../data';
+import '../../assets/css/index.css';
 
 const initialState = {
   audio: AUDIO_DRUMS,
   activeKey: '',
   timeStamp: null,
   activation: false,
-  activationClassName: 'active-btn',
+  activeButtonClass: 'sdm-active-btn',
 };
 
 const drumPadSlice = createSlice({
@@ -30,9 +31,11 @@ const drumPadSlice = createSlice({
       state.activation = !state.activation;
       const audioButton = document.getElementById(action.payload);
       if (state.activation) {
-        audioButton.classList.add(state.activationClassName);
+        audioButton.classList.add(state.activeButtonClass);
+        // audioButton.style.backgroundColor = 'hsl(209, 61%, 62%)';
       } else {
-        audioButton.classList.remove(state.activationClassName);
+        audioButton.classList.remove(state.activeButtonClass);
+        // audioButton.style.backgroundColor = 'white';
       }
     },
   },

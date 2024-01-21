@@ -7,7 +7,7 @@ const Button = ({ audioID, audioKey, audioURL }) => {
         className='drum-pad btn col-3'
         id={audioID}
         onClick={() => {
-          PlaySound(audioKey, audioID);
+          PlaySound(audioKey);
         }}
       >
         <audio

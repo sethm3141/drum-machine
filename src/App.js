@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import './assets/css/index.css';
+
 import Keypad from './components/Keypad';
 import ToggleSide from './components/ToggleSide';
 import { useDispatch } from 'react-redux';
@@ -10,7 +10,7 @@ function App() {
   const dispatch = useDispatch();
 
   const updateActiveKey = (e) => {
-    if (VALID_KEYS.find((element) => element == e.key)) {
+    if (VALID_KEYS.find((element) => element === e.key)) {
       dispatch(setActiveKey(e.key.toUpperCase()));
       dispatch(setTimeStamp());
     }
