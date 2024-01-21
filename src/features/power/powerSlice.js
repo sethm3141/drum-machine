@@ -8,15 +8,12 @@ const powerSlice = createSlice({
   name: 'power',
   initialState,
   reducers: {
-    turnOnPower: (state) => {
-      state.isOn = true;
-    },
-    turnOffPower: (state) => {
-      state.isOn = false;
+    switchPower: (state) => {
+      state.isOn = !state.isOn;
     },
   },
 });
 
-export const { turnOnPower, turnOffPower } = powerSlice.actions;
+export const { switchPower } = powerSlice.actions;
 
 export default powerSlice.reducer;

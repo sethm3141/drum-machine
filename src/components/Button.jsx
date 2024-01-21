@@ -1,45 +1,53 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PlaySound from '../functions/PlaySound';
+import { setText } from '../features/display/displaySlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { setActivation } from '../features/button/buttonSlice';
 
 const Button = ({ audioID, audioKey, audioURL }) => {
   const dispatch = useDispatch();
-  const buttonContainer = useRef(null);
+  const timeoutRef = useRef(null);
+  const [active, setActive] = useState('');
+  const { isOn } = useSelector((store) => store.power);
+
+  const handleButtonPress = (event = audioKey) => {
+    if (event?.key?.toUpperCase() === audioKey || event === audioKey) {
+      //* activate the active styles
+      setActive('sdm-active-btn');
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        setActive('');
+      }, 100);
+
+      if (isOn) {
+        //* Play the audio
+        PlaySound(audioKey);
+
+        //* update the display
+        dispatch(setText(audioID.replace(/-/g, ' ')));
+      }
+    }
+  };
 
   useEffect(() => {
-    const handleButtonPress = (event) => {
-      if (event.key.toUpperCase() === audioKey) {
-        PlaySound(audioKey);
-        dispatch(setActivation(audioID));
-        setTimeout(() => {
-          dispatch(setActivation(audioID));
-        }, 100);
-        //TODO: update the display...
-      }
-    };
-
-    //* Setup the event listener
+    //* Setup the event listener and handle playing the sound and stuff...
     document.addEventListener('keydown', handleButtonPress);
-    console.log('Added an event listener.');
-
-    //* Handle playing the sound and stuff...
+    // console.log('Added an event listener.');
 
     //! Handle the cleanup of the setEventListener function.
     return () => {
       document.removeEventListener('keydown', handleButtonPress);
+      clearTimeout(timeoutRef.current);
     };
-  }, []);
+  }, [isOn]);
 
   return (
     <>
       <button
-        className='drum-pad btn col-3'
+        className={`drum-pad btn col-3 ${active}`}
         id={audioID}
         onClick={() => {
-          PlaySound(audioKey);
+          handleButtonPress();
         }}
-        ref={buttonContainer}
       >
         <audio
           className='clip'

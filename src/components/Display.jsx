@@ -1,5 +1,8 @@
+import { useSelector } from 'react-redux';
+
 const Display = () => {
-  return <div id='display'>Kick</div>;
+  const { text } = useSelector((store) => store.display);
+  return <div id='display'>{text}</div>;
 };
 
 export default Display;
