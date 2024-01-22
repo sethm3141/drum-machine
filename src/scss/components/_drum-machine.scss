@@ -10,9 +10,11 @@
   @include media-breakpoint-down(md) {
     height: 90vh;
     margin-top: 5vh;
+    min-height: sdm-rem(800);
   }
 
   @include media-breakpoint-down(sm) {
     width: 95vw;
+    min-height: sdm-rem(800);
   }
 }

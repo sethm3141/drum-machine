@@ -12024,11 +12024,13 @@ html {
   #drum-machine {
     height: 90vh;
     margin-top: 5vh;
+    min-height: 50rem;
   }
 }
 @media (max-width: 575.98px) {
   #drum-machine {
     width: 95vw;
+    min-height: 50rem;
   }
 }
 
