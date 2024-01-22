@@ -51,12 +51,7 @@ const Button = ({ audioID, audioKey, audioURL }) => {
           handleButtonPress();
         }}
       >
-        <audio
-          className='clip'
-          id={audioKey}
-          src={audioURL}
-          preload='metadata'
-        />
+        <audio className='clip' id={audioKey} src={audioURL} preload='auto' />
         {audioKey}
       </button>
     </>
