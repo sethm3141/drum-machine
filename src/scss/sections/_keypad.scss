@@ -1,7 +1,17 @@
 @use '../global' as *;
+@use '../custom' as *;
 
 .keypad {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+  @include media-breakpoint-down(md) {
+    width: 80%;
+    height: 50%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
 }

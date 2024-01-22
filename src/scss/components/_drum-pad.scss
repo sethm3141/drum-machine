@@ -8,10 +8,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: rem(2) solid hsla(0, 0%, 0%, 0.15);
-  border-radius: rem(10);
+  border: sdm-rem(2) solid hsla(0, 0%, 0%, 0.15);
+  border-radius: sdm-rem(10);
   background-color: white;
-  filter: drop-shadow(rem(5) rem(5) rem(10) hsla(0, 0%, 0%, 0.4));
+  filter: drop-shadow(sdm-rem(5) sdm-rem(5) sdm-rem(10) hsla(0, 0%, 0%, 0.4));
 
   &:hover {
     background-color: $secondary;

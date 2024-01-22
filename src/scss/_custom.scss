@@ -10,7 +10,7 @@ $component-active-bg: $secondary;
 .btn:focus-visible {
   background-color: white !important;
   filter: drop-shadow(
-    rem(5, 16) rem(5, 16) rem(10, 16) hsla(0, 0%, 0%, 0.4)
+    sdm-rem(5) sdm-rem(5) sdm-rem(10) hsla(0, 0%, 0%, 0.4)
   ) !important;
 
   &:hover {

@@ -1,14 +1,31 @@
 @use 'sass:math';
+@use './custom' as *;
+
+// global font size
+$context: 16;
+$font-sizing: 16px;
 
 // functions
-@function rem($pixels, $context: 16) {
+@function sdm-rem($pixels) {
   @return (math.div($pixels, $context) * 1rem);
 }
 
 // global variables
-$height: rem(500);
-$width: rem(500);
+$height: sdm-rem(500);
+$width: sdm-rem(500);
 
-* {
-  // border: 1px solid red;
+// * {
+//   // border: 1px solid red;
+// }
+
+html {
+  font-size: $font-sizing;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 12px;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 12px;
+  }
 }

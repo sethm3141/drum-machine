@@ -1,4 +1,9 @@
+@use '../custom' as *;
+
 .body {
   height: 100%;
   margin: 0 auto 0.5rem auto;
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
 }

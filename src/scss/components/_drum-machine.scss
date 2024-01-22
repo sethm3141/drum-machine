@@ -4,6 +4,15 @@
 #drum-machine {
   height: $height;
   margin-top: calc(50vh - $height / 2);
-  border: rem(14) solid $primary;
-  border-radius: rem(35);
+  border: sdm-rem(14) solid $primary;
+  border-radius: sdm-rem(35);
+
+  @include media-breakpoint-down(md) {
+    height: 90vh;
+    margin-top: 5vh;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 95vw;
+  }
 }
