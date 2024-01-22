@@ -1,11 +1,28 @@
 // custom replaced variables
-// $primary: red;
 $primary: hsl(209, 61%, 62%);
 $secondary: hsl(209, 40%, 70%);
 $third: hsl(209, 40%, 80%);
 
 // Active background color
 $component-active-bg: $secondary;
+
+// trying to fix active button styles
+.btn:focus-visible {
+  background-color: white !important;
+  filter: drop-shadow(
+    rem(5, 16) rem(5, 16) rem(10, 16) hsla(0, 0%, 0%, 0.4)
+  ) !important;
+
+  &:hover {
+    background-color: $secondary !important;
+    cursor: pointer !important;
+  }
+
+  &:focus-visible {
+    border: 2px solid hsla(0, 0%, 0%, 0.15);
+    border-radius: 10px;
+  }
+}
 
 // focus outline that shows around stuff when active
 $focus-ring-width: 0rem;
@@ -21,22 +38,18 @@ $form-range-track-bg: $third;
 
 // button opacity when clicked
 $form-range-thumb-active-bg: tint-color($component-active-bg, 70%);
-// $form-range-thumb-transition: background-color 0.15s ease-in-out,
-//   border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
 // Create an 'active' style that matches the :hover and the :active
 .sdm-active-btn {
-  // @extend .btn;
-
   background-color: $secondary !important;
 
-  // &:hover {
-  //   color: red;
-  // }
+  &:hover {
+    background-color: $secondary !important;
+  }
 
-  // &:active {
-  //   color: red;
-  // }
+  &:focus-visible {
+    background-color: $secondary !important;
+  }
 }
 
 // import bootstrap

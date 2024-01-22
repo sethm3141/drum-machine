@@ -40,7 +40,7 @@ const Button = ({ audioID, audioKey, audioURL }) => {
       document.removeEventListener('keydown', handleButtonPress);
       clearTimeout(timeoutRef.current);
     };
-  }, [isOn, isDrums]);
+  }, [isOn, isDrums, setVolume]);
 
   return (
     <>

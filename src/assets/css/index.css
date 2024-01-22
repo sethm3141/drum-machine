@@ -1,5 +1,24 @@
 @charset "UTF-8";
+.btn:focus-visible {
+  background-color: white !important;
+  filter: drop-shadow(5 5 10 hsla(0, 0%, 0%, 0.4)) !important;
+}
+.btn:focus-visible:hover {
+  background-color: hsl(209, 40%, 70%) !important;
+  cursor: pointer !important;
+}
+.btn:focus-visible:focus-visible {
+  border: 2px solid hsla(0, 0%, 0%, 0.15);
+  border-radius: 10px;
+}
+
 .sdm-active-btn {
+  background-color: hsl(209, 40%, 70%) !important;
+}
+.sdm-active-btn:hover {
+  background-color: hsl(209, 40%, 70%) !important;
+}
+.sdm-active-btn:focus-visible {
   background-color: hsl(209, 40%, 70%) !important;
 }
 
