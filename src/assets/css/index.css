@@ -12022,8 +12022,8 @@ html {
 }
 @media (max-width: 767.98px) {
   #drum-machine {
-    height: 90vh;
-    margin-top: 5vh;
+    height: 85vh;
+    margin-top: 2.5vh;
     min-height: 50rem;
   }
 }

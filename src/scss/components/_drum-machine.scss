@@ -8,8 +8,8 @@
   border-radius: sdm-rem(35);
 
   @include media-breakpoint-down(md) {
-    height: 90vh;
-    margin-top: 5vh;
+    height: 85vh;
+    margin-top: 2.5vh;
     min-height: sdm-rem(800);
   }
 
